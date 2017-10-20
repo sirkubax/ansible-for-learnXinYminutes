@@ -1,0 +1,9 @@
+*.pyc
+env/
+venv/
+/**/env/**/
+*.swp
+*.swn
+*.swo
+*.retry
+playbooks.off/
