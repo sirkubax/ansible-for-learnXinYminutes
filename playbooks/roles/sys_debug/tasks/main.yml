@@ -1,0 +1,5 @@
+---
+ - debug: var=hostvars[item]
+   with_items: "{{ play_hosts }}"
+
+ - include: debug_time.yml
