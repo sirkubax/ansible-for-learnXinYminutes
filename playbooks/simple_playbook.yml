@@ -1,0 +1,12 @@
+---
+# Execution:
+# shell$ ansible-playbook playbooks/simple_playbook.yml
+
+- hosts: all
+
+  tasks:
+   - name: "ping all"
+     ping:
+
+   - name: "execute a shell command"
+     shell: "date; whoami; df -h;"
