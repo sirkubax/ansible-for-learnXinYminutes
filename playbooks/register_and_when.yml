@@ -1,0 +1,20 @@
+---
+- hosts: localhost
+  tasks:
+   - name: check the system capacity
+     shell: df -h /
+     register: root_size
+   
+   - name: debug root_size
+     debug:
+        msg: "{{ root_size }}"
+   
+   - name: debug root_size return code
+     debug:
+       msg:  "{{ root_size.rc }}"
+
+           
+   - name: Print this message when return code of 'check the system capacity' was ok
+     debug:
+       msg:  "{{ root_size.rc }}"
+     when: root_size.rc == 0

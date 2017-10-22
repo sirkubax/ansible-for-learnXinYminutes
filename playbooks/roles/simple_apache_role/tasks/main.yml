@@ -1,0 +1,7 @@
+---
+- name: install packages
+  apt: name={{ item }}
+  with_items:
+    - apache2
+  notify:
+    - restart apache handler

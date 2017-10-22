@@ -1,6 +1,11 @@
 ---
 # Execution:
 # shell$ ansible-playbook playbooks/simple_playbook.yml
+#
+# NOTE that tasks would execute in order:
+#   1) pre_tasks
+#   2) roles 
+#   3) tasks
 
 - hosts: all
 
@@ -14,6 +19,7 @@
   roles: 
       - some_role
       - { role: another_role, some_variable: 'learnxiny', tags: ['my_tag'] }
+      - { role: simple_apache_role, some_variable: 'learnxiny', tags: ['my_tag'] }
   
   pre_tasks:
       - name: some pre-task

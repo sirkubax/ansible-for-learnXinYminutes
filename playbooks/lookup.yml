@@ -1,0 +1,36 @@
+---
+## Example 1
+- name: "set date_var in mine format"
+  set_fact:
+    date_var: "{{ lookup('pipe', 'date +%Y-%m-%d') }}"
+
+- debug: msg="{{ date_var }}"
+
+#- name: " create backup dir with daily name"
+#  file: >
+#    dest=/data/backup/{{ date_var }}
+#    state=directory
+
+
+## Example 2
+#- name: Authorize production SSH public key
+#  authorized_key: |
+#    user={{ unmanaged_services.user }}
+#    key="{{ lookup('file', '../../sys_manage_keys/files/mykey.pub') }}"
+
+
+## Example 3
+#- name: Rundeck | update basic security to have users
+#  debug: msg="{{ lookup('pipe','java -cp /var/lib/rundeck/bootstrap/jetty-all-7.6.0.v20120127.jar org.eclipse.jetty.util.security.Password jsmith mypass 2>&1 | grep MD5') }} is the raw result of running this command
+
+
+## Example 4
+#- name: "GENERIC | register nexus sha1 var from url lookup"
+#  set_fact:
+#    sha1_from_url: "{{ lookup('url', some_url) }}"
+
+
+## Example 5
+#- name: "register nexus sha1 var from url lookup"
+#  set_fact: 
+#    sha1_from_url: "{{ lookup('url', 'http://' + nexus_host + '/content/repositories/' + release + '/net/campaign_manager_frontend/' + versions.campaign_manager_frontend + '/campaign_manager_frontend-' + versions.campaign_manager_frontend + '.tgz.sha1') }}"

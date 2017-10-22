@@ -35,6 +35,7 @@
     #    - nload
     #    - lvm2
 
+    # #By default nagion-nrpe-server was instaling nagios server, use install_recommends
     #  - name: install packages
     #    apt: 
     #      name: "{{ item }}"
@@ -57,7 +58,7 @@
   - name: upload /etc/localtimev
     copy: src=localtime dest=/etc/localtime
 
-  - name: symlink to default editor
+  - name: symlink vim as default editor
     file: src=/usr/bin/vim dest=/etc/alternatives/editor state=link
   
   - name: "set locale"
