@@ -1,0 +1,22 @@
+---
+
+- hosts: all
+
+  vars_files:
+    - vars/vault_encrypted_file.yml
+
+  vars:
+    my_encrypted_variable: "{{ my_encrypted_variable_vault }}"
+
+  tasks:
+    - name: Please initialize the vault secret
+      debug: msg="Please initialize the vault secret \ 
+          echo some_very_very_long_secret > ~/.ssh/secure_located_file"
+
+    - name: print variable - good practice - add _vault postfix
+      debug: 
+        msg: "{{ my_encrypted_variable_vault }}"
+
+    - name: can you find this variable with "grep -R . -e bad_practice_example_name"
+      debug: 
+        msg: "{{ bad_practice_example_name }}"

@@ -1,0 +1,8 @@
+---
+# Execution:
+# shell$ ansible-playbook playbooks/simple_handler.yml
+
+- hosts: all
+
+  roles: 
+      - { role: simple_apache_role, tags: ['my_handler_tag'] }

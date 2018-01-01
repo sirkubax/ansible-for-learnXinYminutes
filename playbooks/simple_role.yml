@@ -19,7 +19,7 @@
   roles: 
       - some_role
       - { role: another_role, some_variable: 'learnxiny', tags: ['my_tag'] }
-      - { role: simple_apache_role, some_variable: 'learnxiny', tags: ['my_tag'] }
+      - { role: simple_apache_role, some_variable: 'learnxiny', tags: ['apache2'] }
   
   pre_tasks:
       - name: some pre-task

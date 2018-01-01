@@ -5,3 +5,11 @@
     - apache2
   notify:
     - restart apache handler
+
+- name: generate template and upload /var/www/index.html
+  template:
+    src: index.html
+    dest: /var/www/index.html
+    owner: www-data
+    group: www-data
+    mode: 0444

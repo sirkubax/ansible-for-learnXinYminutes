@@ -7,6 +7,11 @@
   tasks:
    - name: "ping all"
      ping:
+     tags: 
+       - some_tag
+       - tagA
+       - tag_other
 
    - name: "execute a shell command"
      shell: "date; whoami; df -h;"
+     tags: ["tagA", "other tag"]
